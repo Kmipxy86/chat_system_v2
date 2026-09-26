@@ -88,7 +88,29 @@ hr {
   margin: 12px 0 0;
 }
 
+.field-hint {
+  margin: -8px 0 14px;
+  font-size: 0.8rem;
+}
+
 /* ---- form controls ---- */
+
+.input-with-action {
+  position: relative;
+  display: flex;
+}
+
+.input-with-action input {
+  padding-right: 56px;
+}
+
+.input-with-action .input-action {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+}
 
 label {
   display: flex;

@@ -13,6 +13,7 @@ export default function AgentLoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
@@ -47,13 +48,18 @@ export default function AgentLoginPage() {
         </label>
         <label>
           รหัสผ่าน
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            minLength={8}
-          />
+          <div className="input-with-action">
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              minLength={8}
+            />
+            <button type="button" className="link input-action" onClick={() => setShowPassword((v) => !v)}>
+              {showPassword ? "ซ่อน" : "แสดง"}
+            </button>
+          </div>
         </label>
         <button className="primary wide" disabled={busy || !email.trim() || !password}>
           {busy ? "กำลังเข้าสู่ระบบ…" : "เข้าสู่ระบบ"}
