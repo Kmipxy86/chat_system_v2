@@ -1,5 +1,7 @@
 # QR Chat
 
+Repo: https://github.com/Kmipxy86/chat_system_v2
+
 ระบบแชทแบบห้อง: Host สร้างห้องแล้วแชร์ QR ให้คนสแกนเข้ามาคุยได้ทันทีผ่านเว็บ ไม่ต้องลงแอปและไม่ต้องสมัครสมาชิก
 
 - `server/` — Go (Gin + coder/websocket + PostgreSQL)
@@ -25,6 +27,7 @@ docker compose up -d --build
 | `POSTGRES_PASSWORD` | `qrchat` | รหัสผ่านฐานข้อมูล |
 | `APP_BASE_URL` | ว่าง | prefix ของลิงก์ใน QR เช่น `https://chat.example.com` |
 | `PORT` | `8000` | port ของ Nginx |
+| `AGENT_SIGNUP_KEY` | ว่าง (ปิดการสมัคร) | รหัสที่ต้องแนบใน header `X-Agent-Signup-Key` เพื่อสมัครบัญชีเจ้าหน้าที่ฝ่ายสนับสนุนได้ (ดูหัวข้อ Customer Support ด้านล่าง) |
 
 Production ต้องมี TLS ด้านหน้า Nginx เพื่อให้ใช้ HTTPS/WSS
 
